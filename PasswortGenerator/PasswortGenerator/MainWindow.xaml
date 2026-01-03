@@ -1,0 +1,105 @@
+﻿<Window x:Class="PasswortGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PasswortGenerator"
+        mc:Ignorable="d"
+        Title="Passwort-Generator" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="10"
+                Padding="15"
+                Margin="10"
+                Background="White"
+                VerticalAlignment="Top">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Passwort-Feld: -->
+                <TextBlock Grid.Column="0"
+                           x:Name="TxtPassword"
+                           Text="_s7P'R78?DX:"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+
+                <!-- Aktualisierungs-Button: -->
+                <Button Grid.Column="1"
+                        x:Name="RefreshBtn"
+                        Background="White"
+                        BorderBrush="White"
+                        Margin="10,0"
+                        Cursor="Hand">
+                    <Image Source="/Images/aktualisieren.png"
+                           Width="25"
+                           Height="25"
+                           RenderOptions.BitmapScalingMode="HighQuality"/>
+                </Button>
+
+                <!-- Kopieren-Button: -->
+                <Button Grid.Column="2"
+                        x:Name="CopyBtn"
+                        Content="Passwort kopieren"
+                        Background="Blue"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Padding="15,10"
+                        BorderThickness="2"
+                        BorderBrush="Gray">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+        </Border>
+
+        <!-- Balken: -->
+        <Grid Grid.Row="1" Margin="20,0,20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ProgressBar Grid.Column="0"
+                         x:Name="StrengthBar"
+                         Height="10"
+                         Value="50"
+                         Foreground="Green"
+                         Background="Gray"
+                         BorderThickness="0"
+                         VerticalAlignment="Center">
+            </ProgressBar>
+            
+            <!-- Logo & Status: -->
+            <StackPanel Grid.Column="1" Margin="10,0,0,0" Orientation="Horizontal">
+                <Image Source="/Images/schild.png"
+                       Width="15"
+                       Height="15"
+                       Margin="0,0,5,0"
+                       VerticalAlignment="Center"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <TextBlock x:Name="TxtStatus"
+                           Text="Stark"
+                           FontWeight="Bold"
+                           Foreground="Green"
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
