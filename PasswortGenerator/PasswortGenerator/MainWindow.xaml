@@ -105,12 +105,12 @@
 
         <!-- Feld mit Schieberegler und Checkboxen: -->
         <Border Grid.Row="2"
-                Background="#E8F5E9"
+                Background="LightGray"
                 CornerRadius="10"
                 Margin="10">
 
             <StackPanel>
-                <Grid Margin="0,0,0,10">
+                <Grid Margin="10,10,0,10">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Passwortlänge: " FontSize="15" FontWeight="SemiBold"/>
                         <TextBlock Text="{Binding ElementName=SldLength, Path=Value}"
@@ -128,13 +128,13 @@
                         IsSnapToTickEnabled="True"
                         Margin="0,0,0,30"/>
 
-                <TextBlock Text="Verwendete Zeichen: " Margin="0,0,0,10" FontWeight="SemiBold"/>
+                <TextBlock Text="Verwendete Zeichen: " Margin="10,20,0,10" FontWeight="SemiBold"/>
 
                 <WrapPanel>
-                    <CheckBox x:Name="CbUpper" Content="Großbuchstaben" IsChecked="True" Margin="0,0,20,10"/>
-                    <CheckBox x:Name="CbLower" Content="Kleinbuchstaben" IsChecked="True" Margin="0,0,20,10"/>
-                    <CheckBox x:Name="Numbers" Content="Ziffern" IsChecked="True" Margin="0,0,20,10"/>
-                    <CheckBox x:Name="CbSpecial" Content="Sonderzeichen" IsChecked="True" Margin="0,0,20,10"/>
+                    <CheckBox x:Name="CbUpper" Content="Großbuchstaben" IsChecked="True" Margin="10,0,20,10"/>
+                    <CheckBox x:Name="CbLower" Content="Kleinbuchstaben" IsChecked="True" Margin="10,0,20,10"/>
+                    <CheckBox x:Name="Numbers" Content="Ziffern" IsChecked="True" Margin="10,0,20,10"/>
+                    <CheckBox x:Name="CbSpecial" Content="Sonderzeichen" IsChecked="True" Margin="10,0,20,10"/>
                 </WrapPanel>
             </StackPanel>
         </Border>
