@@ -40,6 +40,7 @@
                 <!-- Aktualisierungs-Button: -->
                 <Button Grid.Column="1"
                         x:Name="RefreshBtn"
+                        Click="Refresh_Button"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Margin="10,0"
@@ -53,6 +54,7 @@
                 <!-- Kopieren-Button: -->
                 <Button Grid.Column="2"
                         x:Name="CopyBtn"
+                        Click="Copy_Button"
                         Content="Passwort kopieren"
                         Background="Blue"
                         Foreground="White"
@@ -79,7 +81,7 @@
             <ProgressBar Grid.Column="0"
                          x:Name="StrengthBar"
                          Height="10"
-                         Value="50"
+                         Value="12"
                          Foreground="Green"
                          Background="Gray"
                          BorderThickness="0"
@@ -116,17 +118,18 @@
                         <TextBlock Text="{Binding ElementName=SldLength, Path=Value}"
                                    FontSize="15"
                                    FontWeight="Bold"
-                                   Foreground="#2E7D32"/>
+                                   Foreground="Blue"/>
                     </StackPanel>
                 </Grid>
 
-                <Slider x:Name="SldLength"
+                <Slider x:Name="SldLength"                      
                         Minimum="1"
                         Maximum="50"
                         Value="12"
                         TickFrequency="1"
                         IsSnapToTickEnabled="True"
-                        Margin="0,0,0,30"/>
+                        Margin="0,0,0,30"
+                        ValueChanged="SldLength_ValueChanged"/>
 
                 <TextBlock Text="Verwendete Zeichen: " Margin="10,20,0,10" FontWeight="SemiBold"/>
 
