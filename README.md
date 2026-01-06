@@ -36,3 +36,9 @@ Ziel dieses Projekts ist es, einen einfachen, übersichtlichen und sicheren Pass
 der dem Benutzer volle Kontrolle über die Passwort-Erstellung gibt und gleichzeitig eine verständliche visuelle Einschätzung der Passwortstärke bietet.
 
 ---
+
+![Design-_und_Hauptseite](./Images/Design-_und_Hauptseite.png)
+<br><br>
+![Status_Beispiele](./Images/Status_Beispiele.png)
+<br><br>
+![Meldung_und_Zwischenablage](./Images/Meldung_und_Zwischenablage.png)
