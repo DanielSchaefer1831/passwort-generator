@@ -32,8 +32,8 @@
                 <!-- Passwort-Feld: -->
                 <TextBlock Grid.Column="0"
                            x:Name="TxtPassword"
-                           Text="_s7P'R78?DX:"
-                           FontSize="22"
+                           Text="Zum Generieren eines Passworts auf &quot;Update&quot; klicken:"
+                           FontSize="20"
                            FontWeight="Bold"
                            VerticalAlignment="Center"/>
 
