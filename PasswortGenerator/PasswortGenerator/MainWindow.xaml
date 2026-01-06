@@ -40,7 +40,7 @@
                 <!-- Aktualisierungs-Button: -->
                 <Button Grid.Column="1"
                         x:Name="RefreshBtn"
-                        Click="Refresh_Button"
+                        Click="BtnUpdate_Click"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         Margin="10,0"
@@ -136,7 +136,7 @@
                 <WrapPanel>
                     <CheckBox x:Name="CbUpper" Content="Großbuchstaben" IsChecked="True" Margin="10,0,20,10"/>
                     <CheckBox x:Name="CbLower" Content="Kleinbuchstaben" IsChecked="True" Margin="10,0,20,10"/>
-                    <CheckBox x:Name="Numbers" Content="Ziffern" IsChecked="True" Margin="10,0,20,10"/>
+                    <CheckBox x:Name="CbNumbers" Content="Ziffern" IsChecked="True" Margin="10,0,20,10"/>
                     <CheckBox x:Name="CbSpecial" Content="Sonderzeichen" IsChecked="True" Margin="10,0,20,10"/>
                 </WrapPanel>
             </StackPanel>

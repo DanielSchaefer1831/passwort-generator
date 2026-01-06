@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.CodeDom.Compiler;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -93,6 +94,64 @@ namespace PasswortGenerator
                 StrengthBar.Value = 100;
                 StrengthBar.Foreground = Brushes.DarkGreen;
             }
+            
+        }
+
+
+        // Passwortlogik nach einer Änderung des Checkbox-Filters:
+        private void GeneratePassword()
+        {
+            string charSet = "";
+
+            //  Prüfen, welche Checkboxen einen Haken haben:
+            if (CbUpper.IsChecked == true)
+            {
+                charSet += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            }
+
+            if (CbLower.IsChecked == true)
+            {
+                charSet += "abcdefghijklmnopqrstuvwxyz";
+            }
+
+            if (CbNumbers.IsChecked == true)
+            {
+                charSet += "0123456789";
+            }
+
+            if (CbSpecial.IsChecked == true)
+            {
+                charSet += "!@#$%^&*()-_=+<>?";
+            }
+
+            // Sicherheits-Check: Falls gar kein Haken gesetzt wurde:
+            if (string.IsNullOrEmpty(charSet))
+            {
+                TxtPassword.Text = "Keine Checkbox ausgewählt.";
+                return;
+            }
+
+            // Zufalls-Generator erstellen:
+            Random random = new Random();
+            int length = (int)SldLength.Value;
+            char[] result = new char[length];
+
+            // Passwort Buchstabe für Buchstabe aus dem charSet ziehen
+            for (int i = 0; i < length; i++)
+            {
+                int index = random.Next(charSet.Length);
+                result[i] = charSet[index];
+            }
+
+            // Das fertige Passwort anzeigen
+            TxtPassword.Text = new string(result);
+        }
+
+
+        // Generiert ein neues Passwort unter Berücksichtigung der gesetzten Filter beim Klicken auf den Update-Button:
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            GeneratePassword(); 
         }
     }
 }
